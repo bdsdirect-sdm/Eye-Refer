@@ -1,0 +1,214 @@
+/* General chat container setup */
+.chat-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Left panel: Chat Rooms List */
+.chat-header {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    width: 450px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.chat-header h5 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.chat-header input {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.list-group-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.list-group-item:hover {
+    background-color: #f0f0f0;
+}
+
+.list-group-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.list-group-item span {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Right Panel: Chat Window */
+.chat-messages {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    flex-grow: 1; /* Makes the chat window grow to fill available space */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat Header in Right Panel */
+.chat-messages .chat-header {
+    margin-bottom: 15px;
+}
+
+.chat-messages .chat-header h6 {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Messages container setup */
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto; /* Allows the chat area to scroll */
+    max-height: calc(100vh - 200px); /* Dynamic height for messages */
+    padding-right: 10px;
+}
+
+/* Message Bubbles */
+.message {
+    /* max-width: 75%; */
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin: 5px 0;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.4;
+    /* background-color: #f2f2f2; */
+    color: #333;
+}
+
+.message strong {
+    font-weight: 600;
+}
+
+.message span {
+    font-size: 14px;
+}
+
+.message.you {
+    background-color: #3b82f6;
+    color: white;
+    align-self: flex-end;
+}
+
+.message.others {
+    background-color: #f0f0f0;
+    color: #333;
+    align-self: flex-start;
+}
+
+/* Message Input Area */
+.message-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.message-input textarea {
+    width: 100%;
+    height: 60px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.message-input button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.message-input button:hover {
+    background-color: #2563eb;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .chat-container {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .chat-header {
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .chat-messages {
+        width: 100%;
+    }
+
+    .message-input button {
+        width: 100%;
+    }
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .sent {
+    align-items: flex-end; /* Align sent messages to the right */
+    color: rgb(26, 43, 202);  /* Optional: Apply blue color for sent messages */
+  }
+  
+  .received {
+    align-items: flex-start; /* Align received messages to the left */
+    color: green;  /* Optional: Apply green color for received messages */
+  }
+  
+  .message span {
+    font-size: 14px;
+    color: inherit;  /* Ensures the color is inherited from parent class */
+  }
+  
+  .message-time {
+    font-size: 12px;
+    color: gray;
+    margin-top: 5px;
+  }
+  
